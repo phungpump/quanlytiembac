@@ -5,17 +5,18 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Order from "./pages/order";
 import Report from "./pages/report";
+import { paths } from './commons/paths';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path={paths.login} element={<Login/>} />
         <Route element={<Layout/>}>
           <Route path="/" element={<Home/>} />
-          <Route path="/quanlytiembac/" element={<Home/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/order" element={<Order/>} />
-          <Route path="/report" element={<Report/>} />
+          <Route path={paths.home} element={<Home/>} />
+          <Route path={paths.order} element={<Order/>} />
+          <Route path={paths.report} element={<Report/>} />
         </Route>
       </Routes>
     </BrowserRouter>
